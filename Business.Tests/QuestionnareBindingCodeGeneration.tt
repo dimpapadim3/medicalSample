@@ -1,0 +1,56 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".txt" #>
+ 
+   <#
+		int categories = 7;
+		string[] texts = new string[7] { 
+                "Energy", 
+                "General Health", 
+                "Biodynamics",
+				"Training",
+				"Nutrition",
+				"Recovery",
+				"Mental Energy"};
+		int[] numBerOfPossibleAnswersArray = new int[7] { 
+                0, 
+                1, 
+                1,
+				1,
+				7,
+				10,
+				9};
+
+	for (int j = 1; j < 3; j++)
+	{
+		#>------------<#
+
+        for (int i = 0; i < categories; i++)
+        {
+           #> 
+				 <div class="answer_color_red" id="w<#=j#>Cat<#=i+1#>" runat="server">
+ 
+				<label id="w<#=j#>Cat<#=i+1#>Label1" runat="server" class="lbl1"> <#=texts[i]#> </label> 
+				<label id="w<#=j#>Cat<#=i+1#>Label2" runat="server" class="lbl2">Answer</label> 
+				<label id="w<#=j#>Cat<#=i+1#>Label3" runat="server" class="lbl3">Exellent</label>
+  
+				</div>
+			<#
+			for (int k = 0; k < numBerOfPossibleAnswersArray[i]; ++k)
+			{
+				#>
+				<div class="answer"  id="w<#=j#>Cat<#=i+1#>Div<#=k+1#>" runat="server">
+ 
+				<label id="w<#=j#>Cat<#=i+1#>Div<#=k+1#>Label1" runat="server" class="lbl4">Answer</label> 
+				<label id="w<#=j#>Cat<#=i+1#>Div<#=k+1#>Label2" runat="server" class="lbl5">Exellent</label>
+				</div>
+		<# }
+		}
+	}
+		#>
+  
+  

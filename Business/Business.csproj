@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B80C37D0-4F4C-40F6-B43D-A9A0D5DCFE8F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Business</RootNamespace>
+    <AssemblyName>Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspectMap">
+      <HintPath>..\packages\AspectMap.1.0.0.0\lib\net40\AspectMap.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.8.1.20, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\NoSqlDataAccess\bin\Debug\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DailyInfo\DailyInfoService.cs" />
+    <Compile Include="DailyInfo\Helpers\DailyInfoDailyDataHelper.cs" />
+    <Compile Include="DailyInfo\Helpers\DailyInfoMonthlyDataHelper.cs" />
+    <Compile Include="DailyInfo\Helpers\DailyInfoWeeklyDataHelper.cs" />
+    <Compile Include="DailyInfo\Helpers\DailyInfoYearlyDataHelper.cs" />
+    <Compile Include="DailyInfo\Helpers\MontlyInfoAgreggationHelperTemplate.cs" />
+    <Compile Include="DailyInfo\Helpers\YearlyInfoAgreggationHelperTemplate.cs" />
+    <Compile Include="Helpers\DataUtils.cs" />
+    <Compile Include="EnergyLevelInfo\Helpers\DailyyDataHelper.cs" />
+    <Compile Include="EnergyLevelInfo\Helpers\MonthlyDataHelper.cs" />
+    <Compile Include="EnergyLevelInfo\Helpers\WeeklyDataHelper.cs" />
+    <Compile Include="EnergyLevelInfo\Helpers\YearlyDataHelper.cs" />
+    <Compile Include="EnergyLevelInfo\Helpers\MontlyInfoHandlingTemplate.cs" />
+    <Compile Include="EnergyLevelInfo\Helpers\YearlyInfoHandlingTemplate.cs" />
+    <Compile Include="Helpers\DailyTrainingDataSummary.cs" />
+    <Compile Include="Helpers\DataAgreggationHelperTemplate.cs" />
+    <Compile Include="Helpers\DataHelper.cs" />
+    <Compile Include="EnergyLevelInfo\EnergyLevelService.cs" />
+    <Compile Include="Events\EventsService.cs" />
+    <Compile Include="Helpers\IDataAgreggationHelperTemplate.cs" />
+    <Compile Include="Helpers\MonthlyTrainigDataSummary.cs" />
+    <Compile Include="Helpers\WeeklyTrainigDataSummary.cs" />
+    <Compile Include="Helpers\YearlyTrainigDataSummary.cs" />
+    <Compile Include="IocBussinesRegistry.cs" />
+    <Compile Include="Lookups.cs" />
+    <Compile Include="Plan\PlanService.cs" />
+    <Compile Include="Questionnaire\IQuestionnaireCalculationAlgorithm.cs" />
+    <Compile Include="Questionnaire\IQuestionnaireElementsCalculationAlgorithm.cs" />
+    <Compile Include="Questionnaire\QuestioannaireTemplates\QuestioannaireAnsweredProcessBase.cs" />
+    <Compile Include="Questionnaire\QuestioannaireTemplates\QuestioannaireTemplateWeek3.cs" />
+    <Compile Include="Questionnaire\QuestioannaireTemplates\QuestioannaireTemplateBuilderBase.cs" />
+    <Compile Include="Questionnaire\QuestioannaireTemplates\QuestioannaireTemplateWeek1.cs" />
+    <Compile Include="Questionnaire\QuestioannaireTemplates\QuestioannaireTemplateWeek2.cs" />
+    <Compile Include="Questionnaire\QuestionnaireCalculationAlgorithm.cs" />
+    <Compile Include="Questionnaire\QuestionnaireServiceNew.cs" />
+    <Compile Include="Questionnaire\QuestionnaireBuilder.cs" />
+    <Compile Include="Team\ChatService.cs" />
+    <Compile Include="Questionnaire\EmptyQuestionnaireService.cs" />
+    <Compile Include="TrainningData\TrainingDataService.cs" />
+    <Compile Include="TrainningData\Helpers\AverageyTrainigDataSummaryStrategy.cs" />
+    <Compile Include="TrainningData\Helpers\MaxTrainigDataSummaryStrategy.cs" />
+    <Compile Include="TrainningData\Helpers\MinTrainigDataSummaryStrategy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Questionnaire\Helpers\DailyDataHelper.cs" />
+    <Compile Include="Questionnaire\Helpers\MonthlyDataHelper.cs" />
+    <Compile Include="Questionnaire\Helpers\MontlyQuestionnaireHandlingTemplate.cs" />
+    <Compile Include="Questionnaire\QuestionnaireService.cs" />
+    <Compile Include="Questionnaire\Helpers\WeeklyDataHelper.cs" />
+    <Compile Include="Questionnaire\Helpers\YearlyDataHelper.cs" />
+    <Compile Include="Questionnaire\Helpers\YearlyQuestionnaireHandlingTemplate.cs" />
+    <Compile Include="Sensors.cs" />
+    <Compile Include="TrainningData\Helpers\SumTrainigDataSummaryStrategy.cs" />
+    <Compile Include="Helpers\NullPeriodTrainingDataStrategy.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserSettings.cs" />
+    <Compile Include="View\TrainingSessionService.cs" />
+    <Compile Include="View\UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business.Interfaces\Business.Interfaces.csproj">
+      <Project>{8af822b6-1e7b-4031-8c7b-7affaffc181a}</Project>
+      <Name>Business.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{a357f293-a443-4f20-bfd4-f31ea44ea788}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess.Interfaces\DataAccess.Interfaces.csproj">
+      <Project>{e0dd7491-cc69-4a7d-ae86-7a70e671c736}</Project>
+      <Name>DataAccess.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorClasses\ErrorClasses.csproj">
+      <Project>{631A846D-42BF-40F7-A16B-D1D8FB712C78}</Project>
+      <Name>ErrorClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger\Logger.csproj">
+      <Project>{E6BB64D3-1B30-4E2D-B77B-19E863D8E1F5}</Project>
+      <Name>Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{2564F66D-88FD-4529-8733-23194FDE7A90}</Project>
+      <Name>Model %28Model\Model%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NoSqlDataAccess\NoSqlDataAccess.csproj">
+      <Project>{E7AECB6C-2B64-408E-9F78-B8990695E73F}</Project>
+      <Name>NoSqlDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security\Security.csproj">
+      <Project>{8BA85F2C-D7EE-4733-8710-DEA4F1E313E3}</Project>
+      <Name>Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServerDateTimeProvider\ServerDateTimeProvider.csproj">
+      <Project>{bab19c7c-0f72-4745-b66e-c8336b77071c}</Project>
+      <Name>ServerDateTimeProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceModel\ServiceModel.csproj">
+      <Project>{7AF6D3CD-DAD4-497F-9C18-FE3464E00CEC}</Project>
+      <Name>ServiceModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SqlDataAccess\SqlDataAccess.csproj">
+      <Project>{9743C429-4EE2-444E-B3BE-64C1ABC90140}</Project>
+      <Name>SqlDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{719601AD-62A7-4D5C-A63B-70C77C64F345}</Project>
+      <Name>Utils %28Utils\Utils%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\kinetic-v4.4.3.js" />
+    <Content Include="Scripts\kinetic-v4.4.3.min.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

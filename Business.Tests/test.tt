@@ -1,0 +1,56 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name=“System.Xml” #>
+
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="ErrorClasses" #>
+ 
+<#@ output extension=".txt" #>
+ 
+ 
+
+ <#
+ 
+                ErrorClasses.GenericError error;
+            var Questions =   Business.Questionnaire.GetQuestionnaireTemplate(1,
+                                                            Common.Constants.DEFAULT_QUESTIONNAIRE_LOCALE,out error,
+                                                           DateTime.Now,39);
+           
+  
+            var nuberOfCategories = 7;
+ 
+            for (int i = 0; i < nuberOfCategories; i++)
+            {
+     
+		#> <div >
+					  <div id="QwCat<#=i+1#>" runat="server" style="background-color:#FF0;">
+ 
+							<div class="QwQuestion" id="QwCat<#=i+1#>Label1Div"> <label id="QwCat<#=i+1#>Label1" runat="server"> <#=Questions[i]#> </label> </div>
+							<div class="QwBtn1" id="QwCat<#=i+1#>Label2Div"> <input  type="button" value="" class='jqxButton' runat="server" id="QwCat<#=i+1#>Btn1" onclick="QuestionClick('QwCat<#=i+1#>Btn1');" /> </div>
+							<div class="QwBtn2" id="QwCat<#=i+1#>Label3Div"> <input  type="button" value="" class='jqxButton1' runat="server" id="QwCat<#=i+1#>Btn2" onclick="QuestionClick('QwCat<#=i+1#>Btn2');" /></div>
+							<div class="QwBtn3" id="QwCat<#=i+1#>Label4Div"> <input  type="button" value="" class='jqxButton2' runat="server" id="QwCat<#=i+1#>Btn3" onclick="QuestionClick('QwCat<#=i+1#>Btn3');" /></div>
+							<div class="QwBtn4" id="QwCat<#=i+1#>Label5Div"> <input  type="button" value="" class='jqxButton3' runat="server" id="QwCat<#=i+1#>Btn4" onclick="QuestionClick('QwCat<#=i+1#>Btn4');" /></div>
+  
+						</div>
+						<#
+                for (int j = 0; j < Questions[i].Count(); j++)
+                {
+     
+                    for (int k = 0; k < Answers[i][j].Count() ; k++)
+                    { 
+
+			 
+   
+                    }
+ 
+                }
+
+           
+            } 
+
+
+			  #>
+
+ 
